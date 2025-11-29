@@ -15,7 +15,7 @@ jobs:
         with:
           source: ghcr.io/${{ github.repository_owner }}/bazzite-gamedev:latest
           target: bazzite-gamedev.iso
-          fedora_version: 41
+          fedora_version: 43
           enrollment_password: ""
           secure_boot_key_url: ""
 
