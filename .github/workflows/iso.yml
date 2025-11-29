@@ -19,7 +19,7 @@ jobs:
           image_repo: ghcr.io/${{ github.repository_owner }}
           image_name: bazzite-gamedev
           image_tag: latest
-          version: 43
+          version: 42
           iso_name: bazzite-gamedev.iso
           variant: Kinoite 
 
