@@ -16,7 +16,7 @@ modules:
       - scope: system
         notify: true
         install:
-          - com.vesktop.Vesktop
+          - dev.vencord.Vesktop
           - com.spotify.Client
           - dev.zed.Zed
           - com.google.Chrome
