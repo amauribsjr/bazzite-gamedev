@@ -10,6 +10,17 @@ jobs:
       packages: write
       id-token: write
     steps:
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
+      
       - name: Checkout repo
         uses: actions/checkout@v4
 
@@ -21,7 +32,7 @@ jobs:
           image_tag: latest
           version: 42
           iso_name: bazzite-gamedev.iso
-          variant: Kinoite 
+          variant: Kinoite
 
       - name: Upload ISO as Artifact
         uses: actions/upload-artifact@v4
