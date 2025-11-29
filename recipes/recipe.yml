@@ -10,8 +10,8 @@ modules:
       - btop
       - tree
       - blender
-       
-- type: default-flatpaks
+
+  - type: default-flatpaks
     configurations:
       - scope: system
         notify: true
