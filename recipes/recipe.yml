@@ -10,10 +10,6 @@ modules:
       - btop
       - tree
       - blender
-      - jetbrains-mono-fonts
-      - jetbrains-mono-fonts-all
-      - google-noto-sans-fonts
-      - google-noto-emoji-fonts
     remove:
       - firefox
 
@@ -24,3 +20,4 @@ modules:
         - com.vesktop.Vesktop
         - com.spotify.Client
         - dev.zed.Zed
+        - com.google.Chrome
