@@ -1,33 +1,28 @@
 name: Build ISO
-
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Botão manual
 
 jobs:
   build-iso:
-    name: Build ISO
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
       id-token: write
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
       - name: Build ISO
-        uses: blue-build/github-action@v1.10
+        uses: jasonn3/build-container-installer@v1.2.4
         with:
-          recipe: recipe.yml
-          iso_editor: true
-          registry_token: ${{ github.token }}
-          pr_event_number: ${{ github.event.number }}
-          maximize_build_space: true
+          source: ghcr.io/${{ github.repository_owner }}/bazzite-gamedev:latest
+          target: bazzite-gamedev.iso
+          fedora_version: latest
 
       - name: Upload ISO as Artifact
         uses: actions/upload-artifact@v4
         with:
           name: bazzite-gamedev-iso
-          path: ./output/*.iso
+          path: |
+            *.iso
+            *.sha256
           if-no-files-found: error
           retention-days: 5
