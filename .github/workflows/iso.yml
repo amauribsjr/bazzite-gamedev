@@ -1,0 +1,33 @@
+name: Build ISO
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-iso:
+    name: Build ISO
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build ISO
+        uses: blue-build/github-action@v1.10
+        with:
+          recipe: recipe.yml
+          iso_editor: true
+          registry_token: ${{ github.token }}
+          pr_event_number: ${{ github.event.number }}
+          maximize_build_space: true
+
+      - name: Upload ISO as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bazzite-gamedev-iso
+          path: ./output/*.iso
+          if-no-files-found: error
+          retention-days: 5
