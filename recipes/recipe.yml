@@ -10,8 +10,6 @@ modules:
       - btop
       - tree
       - blender
-    remove:
-      - firefox
 
   - type: default-flatpaks
     notify: true
