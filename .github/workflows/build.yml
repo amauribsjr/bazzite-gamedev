@@ -22,6 +22,8 @@ jobs:
       contents: read
       packages: write
       id-token: write
+    env:
+      BUILD_OPTS: "--no-sign"
     strategy:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
