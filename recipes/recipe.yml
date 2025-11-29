@@ -1,29 +1,21 @@
-# image will be published to ghcr.io/<user>/<name>
 name: bazzite-gamedev
-# description will be included in the image's metadata
-description: Minha versão customizada do Bazzite DX para Game Development
-
-# the base image to build on top of (FROM) and the version tag to use
+description: Bazzite DX Custom Image
 base-image: ghcr.io/ublue-os/bazzite-dx-nvidia
-image-version: stable # latest is also supported if you want new updates ASAP
+image-version: stable
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - type: rpm-ostree
     repos: []
     install:
       - btop
-      - lazygit
       - tree
       - blender
       - jetbrains-mono-fonts
       - jetbrains-mono-fonts-all
       - google-noto-sans-fonts
       - google-noto-emoji-fonts
-      
     remove:
-      firefox
+      - firefox
 
   - type: default-flatpaks
     notify: true
@@ -32,5 +24,3 @@ modules:
         - com.vesktop.Vesktop
         - com.spotify.Client
         - dev.zed.Zed
-      # remove:
-      #   - org.gnome.eog
