@@ -10,12 +10,11 @@ modules:
       - btop
       - tree
       - blender
-
+       
   - type: default-flatpaks
     notify: true
-    system:
-      install:
-        - com.vesktop.Vesktop
-        - com.spotify.Client
-        - dev.zed.Zed
-        - com.google.Chrome
+    install:
+      - com.vesktop.Vesktop
+      - com.spotify.Client
+      - dev.zed.Zed
+      - com.google.Chrome
