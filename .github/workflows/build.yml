@@ -22,8 +22,6 @@ jobs:
       contents: read
       packages: write
       id-token: write
-    env:
-      BUILD_OPTS: "--no-sign"
     strategy:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
@@ -36,7 +34,7 @@ jobs:
         uses: blue-build/github-action@v1.10
         with:
           recipe: ${{ matrix.recipe }}
-          # cosign_private_key: ${{ secrets.SIGNING_SECRET }}
+          build_opts: "--no-sign"
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
 
