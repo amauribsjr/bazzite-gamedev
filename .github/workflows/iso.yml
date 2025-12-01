@@ -22,7 +22,7 @@ jobs:
           swap-storage: true
       
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Build ISO
         uses: jasonn3/build-container-installer@v1.2.4
