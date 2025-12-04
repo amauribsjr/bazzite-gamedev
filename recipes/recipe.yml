@@ -16,7 +16,9 @@ modules:
       - scope: system
         notify: true
         install:
-          - dev.vencord.Vesktop
-          - com.spotify.Client
+          - org.equicord.equibop
+          - com.mastermindzh.tidal-hifi
           - dev.zed.Zed
           - com.google.Chrome
+        remove:
+          - org.mozilla.firefox
