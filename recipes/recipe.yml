@@ -16,7 +16,6 @@ modules:
       - scope: system
         notify: true
         install:
-          - org.equicord.equibop
           - com.mastermindzh.tidal-hifi
           - dev.zed.Zed
           - com.google.Chrome
