@@ -19,5 +19,6 @@ modules:
           - com.mastermindzh.tidal-hifi
           - dev.zed.Zed
           - com.google.Chrome
+          - im.riot.Riot
         remove:
           - org.mozilla.firefox
