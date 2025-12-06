@@ -19,3 +19,4 @@ modules:
           - com.mastermindzh.tidal-hifi
           - dev.zed.Zed
           - im.riot.Riot
+          - org.prismlauncher.PrismLauncher
